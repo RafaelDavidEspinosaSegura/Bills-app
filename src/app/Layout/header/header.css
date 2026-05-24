@@ -1,0 +1,46 @@
+/* Header principal */
+.header {
+    background-color: #0cafa7;   /* azul verdoso, estilo financiero */
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #087f78; /* línea inferior */
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    font-family: 'Segoe UI', sans-serif;
+    color: #ffffff;
+}
+
+.logo .icon {
+    font-size: 28px;
+    margin-right: 10px;
+}
+
+.logo h1 {
+    font-size: 22px;
+    margin: 0;
+}
+
+/* Navegación */
+.nav a {
+    color: #fff1f1;
+    margin-left: 1rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+.nav a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.nav a.active {
+    border-bottom: 2px solid #c5d02a; /* marca la opción activa */
+}

@@ -1,0 +1,28 @@
+/* Footer principal */
+.footer {
+    background-color: #0cafa7;   /* mismo color que header y sidebar */
+    color: #ffffff;
+    text-align: center;
+    padding: 15px;
+    border-top: 3px solid #087f78; /* coherente con el borde del header */
+    margin-top: 20px;
+}
+
+/* Navegación dentro del footer */
+.footer-nav {
+    margin-top: 8px;
+}
+
+.footer-nav a {
+    color: #fff1f1;
+    text-decoration: none;
+    margin: 0 8px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+.footer-nav a:hover {
+    text-decoration: underline;
+    color: #c5d02a; /* mismo amarillo que el activo del sidebar */
+}
