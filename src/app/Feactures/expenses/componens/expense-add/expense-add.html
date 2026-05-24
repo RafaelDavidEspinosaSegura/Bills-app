@@ -1,1 +1,31 @@
-<p>expense-add works!</p>
+<div class="expense-add-card">
+  <h3>{{ message }}</h3>
+
+  <form (ngSubmit)="submit()" class="expense-form">
+    
+    <label>Descripción</label>
+    <input type="text" [(ngModel)]="newExpense.description" name="description" required />
+
+    <label>Monto</label>
+    <input type="number" [(ngModel)]="newExpense.amount" name="amount" required />
+
+    <label>Fecha</label>
+    <input type="date" [(ngModel)]="newExpense.date" name="date" required />
+
+    <label>Categoría</label>
+    <select [(ngModel)]="newExpense.category" name="category">
+      <option [value]="ExpenseCategory.Food">Comida</option>
+      <option [value]="ExpenseCategory.Transport">Transporte</option>
+      <option [value]="ExpenseCategory.Entertainment">Entretenimiento</option>
+      <option [value]="ExpenseCategory.Health">Salud</option>
+      <option [value]="ExpenseCategory.Housing">Vivienda</option>
+      <option [value]="ExpenseCategory.Others">Otros</option>
+    </select>
+
+    <!-- Botones -->
+    <div class="form-actions">
+      <button type="submit" class="btn-save">Guardar</button>
+      <button type="button" class="btn-cancel" (click)="close()">Cancelar</button>
+    </div>
+  </form>
+</div>

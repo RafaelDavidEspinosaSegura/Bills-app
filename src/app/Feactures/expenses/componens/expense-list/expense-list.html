@@ -1,1 +1,49 @@
-<p>expense-list works!</p>
+<div class="expense-page">
+  <!-- Encabezado -->
+  <header class="page-header">
+    <h2>📋 Lista de Gastos</h2>
+    <p>Administra y revisa tus gastos recientes</p>
+  </header>
+
+  <!-- Botón para abrir modal -->
+  <button class="btn-add" (click)="openModal()">+ Nuevo Gasto</button>
+
+  <!-- Tabla de gastos -->
+  <div class="table-card">
+    <table class="expense-table">
+      <thead>
+        <tr>
+          <th>Descripción</th>
+          <th>Monto</th>
+          <th>Fecha</th>
+          <th>Categoría</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+       <tr *ngFor="let expense of expenseList">
+       <td class="cell-description">{{ expense.description }}</td>
+       <td class="cell-amount">{{ expense.amount | number:'1.2-2' }}</td>
+       <td class="cell-date">{{ expense.date | date:'dd/MM/yyyy' }}</td>
+       <td class="cell-category">
+       <span class="category-badge" [ngClass]="getCategoryClass(expense.category)">
+              {{ getCategoryName(expense.category) }}
+            </span>
+          </td>
+         
+          <td>
+            <button class="btn-delete" (click)="onDeleteExpense(expense.id)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <app-expense-add
+    *ngIf="showModal"
+    (expenseAdded)="onExpenseAdded($event)"
+    (closed)="showModal = false"
+    [message]="modalMessage">
+  </app-expense-add>
+</div>
